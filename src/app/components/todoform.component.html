@@ -16,6 +16,9 @@
         Due:
         <input type="date" name="" formControlName="due">
     </label>
+    <div *ngIf="todoForm.get('due').hasError('dueDateCheck') && todoForm.get('due').dirty">
+        Due date has to be today or later.
+    </div>
     
     <br><br>
     <button type="submit" [disabled]="todoForm.invalid">Add</button>
